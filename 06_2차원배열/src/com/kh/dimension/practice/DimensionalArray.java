@@ -164,6 +164,57 @@ public class DimensionalArray {
 		
 		
 	}
+	// <----------------중복되지 않는 경우--------------------->
+	public void method4() { //(실습...)
+		
+		//1) 1차원 배열을 이용해서 먼저 중복 제거 된 랜덤 값을 추출
+		int[] arr = new int[9];
+		int[][] newArr = new int[3][3];
+		int index = 0;
+		
+		
+		for(int i = 0; i<arr.length; i++)
+		{
+			//2. 일로와서 다시 시작
+			
+			arr[i] =(int)(Math.random()*10+1);
+			
+			//중복제거
+			for(int j =0; j<i;j++) //이전까지 와의 값과 비교하면되니까.
+			{
+				if(arr[i] == arr[j])
+				{
+					i--; //다시 값 넣기.
+					
+					break;//1. 탈출
+				}			
+			}		
+		}
+		
+		//System.out.println(Arrays.toString(arr)); 
+		//toString은 객체가 가지고있는 정보나 값들을 문자열로 마들어 리턴하는 메소드.
+	
+		//2) 3행 3열의 2차원 배열에 랜덤값을 대입
+		
+		for(int i = 0; i<newArr.length; i++)
+		{
+			for(int j = 0; j < newArr.length ; j++)
+			{
+				newArr[i][j] = arr[index++]; //오류남 왜
+			}
+		}
+		//3) 3행 3열의 2차원 배열에 출력
+		
+		for(int i = 0; i<newArr.length;i++)
+		{
+			for(int j = 0;j<newArr[i].length;j++) //새로운오류
+			{
+				System.out.printf("%2d ",newArr[i][j]);
+			}
+			System.out.println();
+		}
+	}
+	
 	
 	
 		

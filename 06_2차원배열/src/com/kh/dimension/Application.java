@@ -8,8 +8,8 @@ public class Application { //어플리케이션 부분
 
 		//new DimensionalArray().method1(); //메소드1
 		//new DimensionalArray().method2(); //메소드2
-		new DimensionalArray().method3(); //메소드3
-		
+		//new DimensionalArray().method3(); //메소드3
+		new DimensionalArray().method4(); //실습) 메소드4
 	}
 
 }
